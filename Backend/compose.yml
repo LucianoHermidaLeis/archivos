@@ -1,0 +1,25 @@
+services:
+  api:
+    build: .
+    container_name: API-CONTENEDOR
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://usuario:contrasena@db:5432/foro
+    depends_on:
+      - db
+
+  db:
+    image: postgres:17
+    container_name: DB_CONTENEDOR
+    environment:
+      POSTGRES_USER: usuario
+      POSTGRES_PASSWORD: contrasena
+      POSTGRES_DB: foro
+    ports:
+      - "5432:5432"
+    volumes:
+      - volumen1:/var/lib/postgresql/data
+
+volumes:
+  volumen1:

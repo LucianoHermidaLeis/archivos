@@ -1,0 +1,29 @@
+{
+  "name": "tp-grupal-cva-camejo-2024",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start:backend": "nodemon Backend/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexFiuba/Tp-Grupal-CVA-Camejo-2024.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexFiuba/Tp-Grupal-CVA-Camejo-2024/issues"
+  },
+  "homepage": "https://github.com/AlexFiuba/Tp-Grupal-CVA-Camejo-2024#readme",
+  "dependencies": {
+    "@prisma/client": "^6.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "prisma": "^6.1.0"
+  }
+}

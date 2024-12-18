@@ -1,0 +1,220 @@
+.navbar{
+    background-color: black;
+    border-bottom:  2px solid #ccc;
+}
+
+html{
+    background-color: black;
+}
+
+.input{
+    background-color: white;
+    width: 20rem;
+    padding-right: 2rem;
+    color: black;
+    border-radius: 5rem;
+}
+
+.input::placeholder{
+    color: black;
+}
+
+.search-icon{
+    color: black;
+    position: relative;
+    left: -2rem;
+    bottom: -0.5rem;
+}
+
+.column{
+    min-height: 100vh;
+    margin-top: 1rem;
+}
+
+.column.is-2 {
+    position: sticky;
+    top: 0; 
+    height: 100vh; 
+    overflow-y: auto; 
+}
+
+.column.is-8 {
+    position: relative;
+    height: 200vh;
+    max-height: max-content;
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.offset-title{
+    margin-left: 1rem;
+}
+
+.element{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.topic-list a {
+    color: white;
+    text-decoration: none; 
+}
+
+.topic-list a:hover {
+    color: #ffdc50; 
+}
+
+.responsive-text {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .column.is-2.sticky-column {
+        margin-bottom: -2rem; 
+        position: static; 
+    }
+
+    .column.is-2.sticky-column.blank {
+        display: none; 
+    }
+
+    .topic-list {
+        font-size: x-large;
+    }
+
+    .responsive-text{
+        display: block;
+        text-align: center;
+        margin: 3rem 1rem 0rem 1rem;
+        font-size: x-large;
+    }
+}
+
+.post {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: .5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+  
+.like-comment-container {
+    display: flex;
+    align-items: center;
+    margin-top: .6rem;
+    width: 100%; 
+    gap: 1rem 
+}    
+
+.heart {
+    font-size: 24px;
+    color: gray; 
+    cursor: pointer;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.heart.liked {
+    color: rgb(247, 222, 85); 
+  }
+
+.like-count { 
+    font-weight: bold;
+}
+
+.comment-input {
+    flex: 1; 
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.comment-input:focus {
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: .5rem; 
+}
+
+.user-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%; 
+    object-fit: cover;
+    
+}
+
+.post-head {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    margin-bottom: .5rempx; 
+  }
+
+.login-prompt {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #000;    
+    position: relative;
+    color: #ccc;
+}    
+
+/*para las paginas de cada tópico*/  
+.topic-caption {
+    margin: 0rem 1rem 0rem 1rem;
+}
+
+.modal-content {
+    width: 45rem;
+    padding: 0.1rem;
+
+}
+.modal-box{
+    background-color: white;
+    color: white;
+    border-radius: 1rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.input-register, .input-login, .input-edit{
+    border-radius: 0.5rem;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.897);
+    background-color: white;
+    border-color: rgba(180, 180, 180, 0.767);
+}
+.input-register::placeholder, .input-login::placeholder, .input-edit::placeholder{
+    color: rgba(131, 131, 131, 0.856);
+}
+
+.label-register, .label-login, .label-edit{
+    font-weight: 500;
+}
+
+#button-register-modal, #button-login-modal, #button-edit-modal{
+    width: 100%;
+}
+.label {
+    color: black;
+}
+
+.is-inactive{
+    display: none;
+}
+.error{
+    transition: 0.5s;
+}

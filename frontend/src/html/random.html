@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+        >
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    
+    <body>
+        <!-- Navbar --> 
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="file:///home/facundo/Documentos/intro%20software/tp%20final/Tp-Grupal-CVA-Camejo-2024/index.html">
+                <img src="assets/logo.jpg">
+                <h1 class="title">FORO FIUBA</h1>
+              </a>
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>        
+
+            <!-- Barra de busqueda -->  
+            <div class="navbar-start is-centered">
+                <div class="navbar-item">
+                    <form action="#" method="get">
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Buscar...">
+                                <button>
+                                  <span class="icon">
+                                    <i class="fas fa-search search-icon"></i> 
+                                  </button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div> 
+          </nav>
+
+          <!-- Temas --> 
+          <div class="columns">
+            <div class="column is-2 sticky-column">
+              <h1 class="title offset-title">Random</h1>
+                <p class="topic-caption">Bienvenido a Random, un espacio para explorar publicaciones variadas, ideas fuera de lo común y contenidos que no encajan en categorías específicas. ¡Déjate sorprender!</p>
+            </div>
+
+            <!-- Publicaciones --> 
+            <div class="column is-8">
+              <div class="post"> 
+                <div class="post-head">
+                  <div class="user-info">
+                    <img class="user-avatar" src="assets/usuario.png" alt="Imagen de usuario" />
+                    Usuario
+                  </div>
+                  <div class="post-topic">
+                    <span>Tema del posteo</span>
+                  </div>
+                </div>
+                <strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula elementum metus, id tincidunt massa convallis vitae. Vestibulum ex mi, tempor non laoreet id, malesuada non magna. Nam at laoreet lorem. Vivamus a dui vitae ipsum consectetur placerat vitae sit amet neque. Duis pulvinar, ex ut pellentesque sodales, magna mauris tristique libero, sed fringilla odio nisl ac nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. In tempor metus nec iaculis tincidunt. Maecenas nec diam eu arcu fringilla ullamcorper. Nam tincidunt dapibus nulla eu blandit. Mauris luctus blandit leo venenatis dapibus. Curabitur egestas consectetur nisl. Integer pellentesque rutrum metus, et pretium arcu lobortis eu. Aenean sapien felis, consequat ac tincidunt a, fermentum vel leo.</strong> 
+                <div class="like-comment-container">
+                  <span class="heart" onclick="toggleLike(this)">❤</span>
+                  <input type="text" class="comment-input" placeholder="Añadir un comentario..." />
+                </div>
+              </div>  
+            </div>
+            
+            <!-- Tercer Columna-->  
+            <div class="column is-2 sticky-column blank"></div>
+          </div>
+      <script>
+        function toggleLike(element) {
+          element.classList.toggle("liked");
+        }
+      </script>  
+    </body>
+</html>

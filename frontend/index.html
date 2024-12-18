@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+        >
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="./src/css/styles.css">
+    </head>
+    
+    <body>
+        <!-- Navbar --> 
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="index.html">
+                <img src="assets/logo.jpg">
+                <h1 class="title">FORO FIUBA</h1>
+              </a>
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>        
+
+            <!-- Barra de busqueda -->  
+            <div class="navbar-start is-centered">
+                <div class="navbar-item">
+                    <form action="#" method="get">
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Buscar...">
+                                <button>
+                                  <span class="icon">
+                                    <i class="fas fa-search search-icon"></i> 
+                                  </button>
+                                  </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div> 
+
+            <!-- Botones de usuario -->              
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a id="button-login-navbar" class="button is-dark button-login-register">
+                      <strong>Ingresar</strong>
+                    </a>
+                    <a id="button-register-navbar" class="button is-light button-login-register">
+                      Registrarse
+                    </a>
+                    <a id="button-register-navbar" href="src/html/user.html">
+                      <img src="assets/usuario.png" id="user-avatar-profile" class="user-avatar is-active" >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <!-- Temas --> 
+          <div class="columns">
+            <div class="column is-2 sticky-column">
+              <h1 class="title offset-title">Temas</h1>
+              <ul class="topic-list">
+                <strong>
+                <li class="element"><a href="src/html/catedra.html">Cátedra Camejo</a></li>
+                <li class="element"><a href="src/html/random.html">Random</a></li>
+                <li class="element"><a href="src/html/siu.html">Funcionalidad SIU</a></li>
+                <li class="element"><a href="src/html/ti.html">TI</a></li>
+                <li class="element"><a href="src/html/fiuba.html">FIUBA</a></li>
+              </strong>
+              </ul>
+              <div class="responsive-text">
+                Elegí uno de los temas de arriba o echá un vistazo a las últimas publicaciones de abajo
+            </div>
+            </div>
+
+            <!-- Publicaciones --> 
+            <div id="posts-data" class="column is-8"></div>
+
+            <!-- Tercer Columna-->  
+            <div class="column is-2 sticky-column blank"></div>
+          </div>
+
+          <!-- Registro modal -->
+          <div id="modal-register" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div id="modal-register-box" class="box modal-box">
+                <div class="fixed-grid has-2-cols">
+                  <div class="grid">
+                    <div class="field">
+                      <label class="label label-register">Nombre</label>
+                      <div class="control">
+                        <input id="register-name" class="input input-register" type="text" placeholder="Ej: Jorge">
+                        <strong id="register-name-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label label-register">Apellido</label>
+                      <div class="control">
+                        <input id="register-lastname"  class="input input-register" type="text" placeholder="Ej: Torres">
+                        <strong id="register-lastname-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field cell is-col-span-2">
+                      <label class="label label-register">Correo Eléctronico</label>
+                      <div class="control">
+                        <input id="register-email" class="input input-register" type="email" placeholder="Ej: jorgetorres@fi.uba.ar">
+                        <strong id="register-email-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label  class="label label-register">Contraseña</label>
+                      <div class="control">
+                        <input id="register-password" class="input input-register" type="password" placeholder="********">
+                        <strong id="register-password-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label label-register">Confirmar Contraseña</label>
+                      <div class="control">
+                        <input id="register-confirm-password" class="input input-register" type="password" placeholder="********">
+                        <strong id="register-confirm-password-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field cell is-col-span-2">
+                      <div class="control">
+                        <button id="button-register-modal" class="button">Registrarse</button> 
+                        <strong id="register-button-form-error" class="error"></strong>                                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button id="button-close-modal-register" class="modal-close is-large" aria-label="close"></button>
+          </div>
+        </div>
+      </div>  
+          <!-- Ingreso modal -->
+          <div id="modal-login" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div id="modal-login-box" class="box modal-box">
+                <div class="fixed-grid has-2-cols">
+                  <div class="grid">
+                    <div class="field cell is-col-span-2">
+                      <label class="label label-login">Correo Eléctronico</label>
+                      <div class="control">
+                        <input id="login-email" class="input input-login" type="email" placeholder="Ej: jorgetorres@fi.uba.ar">
+                        <strong id="login-email-error" class="error"></strong>   
+                      </div>
+                    </div>
+                    <div class="field cell is-col-span-2">
+                      <label  class="label label-login">Contraseña</label>
+                      <div class="control">
+                        <input id="login-password" class="input input-login" type="password" placeholder="********">
+                        <strong id="login-password-error" class="error"></strong> 
+                      </div>
+                    </div>
+                    <div class="field cell is-col-span-2">
+                      <div class="control">
+                        <button id="button-login-modal" class="button">Ingresar</button>       
+                        <strong id="login-button-form-error" class="error"></strong>                      
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button id="button-close-modal-login" class="modal-close is-large" aria-label="close"></button>
+          </div>
+        </div>
+      </div>     
+
+      </script>  
+      <script src="./src/js/variables.js"></script>
+      <script src="./src/js/modals.js"></script>
+      <script src="./src/js/register.js"></script>
+      <script src="./src/js/login.js"></script>
+      <script src="./src/js/posts.js"></script>
+      <script src="./src/js/users.js"></script>
+    </body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+        >
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/user.css">
+        <title>Usuario</title>
+    </head>
+    
+    <body>
+        <!-- Navbar --> 
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="../../index.html">
+                <img src="../../assets/logo.jpg">
+                <h1 class="title">FORO FIUBA</h1>
+              </a>
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>        
+
+            <!-- Barra de busqueda -->  
+            <div class="navbar-start is-centered">
+                <div class="navbar-item">
+                    <form action="#" method="get">
+                        <div class="field">
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Buscar...">
+                                <button>
+                                  <span class="icon">
+                                    <i class="fas fa-search search-icon"></i> 
+                                  </button>
+                                  </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div> 
+
+            <!-- Botones de usuario -->              
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a id="button-edit-navbar">
+                      <img src="../../assets/usuario.png" id="user-avatar-profile" class="user-avatar is-active" >
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <!-- Temas --> 
+          <div class="columns">
+            <div class="column is-2 sticky-column">
+              <h1 class="title offset-title">Temas</h1>
+              <ul class="topic-list">
+                <strong>
+                <li class="element"><a href="catedra.html">Cátedra Camejo</a></li>
+                <li class="element"><a href="random.html">Random</a></li>
+                <li class="element"><a href="siu.html">Funcionalidad SIU</a></li>
+                <li class="element"><a href="ti.html">TI</a></li>
+                <li class="element"><a href="fiuba.html">FIUBA</a></li>
+              </strong>
+              </ul>
+              <div class="responsive-text">
+                Elegí uno de los temas de arriba o echá un vistazo a las últimas publicaciones de abajo
+            </div>
+            </div>
+
+            <!-- Usuario --> 
+            <div class="column is-8">
+
+                <div class="container">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Usuario: <span id="user-nickname" class="ml-2"></span>
+                            </p>
+                            <button class="card-header-icon" aria-label="more options">
+                                <img src="../../assets/usuario.png" id="user-avatar" class="user-avatar">
+                            </button>
+                        </header>
+
+                        <div class="card-content">
+                            <div class="content">
+                                <p><strong>Nombre:</strong> <span id="user-firstname"></span>
+                                  <span class="icon is-small edit-user-icon">
+                                    <i class="fas fa-edit"></i>
+                                  </span>
+                                </p>
+                                <p><strong>Apellido:</strong> <span id="user-lastname"></span>
+                                  <span class="icon is-small edit-user-icon">
+                                    <i class="fas fa-edit"></i>
+                                  </span>
+                                </p>
+                                <p><strong>Carrera Universitaria:</strong> <span id="user-university-career"></span>
+                                  <span class="icon is-small edit-user-icon">
+                                    <i class="fas fa-edit"></i>
+                                  </span>
+                                </p>
+                                <p><strong>Signo Zodiacal:</strong> <span id="user-sign-zodiac"></span>
+                                  <span class="icon is-small edit-user-icon">
+                                    <i class="fas fa-edit"></i>
+                                  </span>
+                                </p>
+
+                                <p><strong>Email:</strong> <span id="user-email"></span>
+                                  <span class="icon is-small edit-user-icon">
+                                    <i class="fas fa-edit"></i>
+                                  </span>
+                                </p>
+                                <p><strong>Contraseña:</strong> <span id="user-password">********</span>
+                                  <span class="icon is-small edit-user-icon">
+                                    <i class="fas fa-edit"></i>
+                                  </span>
+                                </p>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <button class="card-footer-item button is-info is-light" id="edit-button">Editar</button>
+                            <button class="card-footer-item button is-danger is-light" id="delete-button">Eliminar</button>
+                        </footer>
+                    </div>
+                </div>
+
+            
+            <!-- Tercer Columna-->  
+            <div class="column is-2 sticky-column blank"></div>
+          </div>
+
+          
+          <!-- Edit User Modal GENERAL -->
+          <div id="modal-edit-all" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div id="modal-edit-all-box" class="box modal-box">
+                <div class="fixed-grid has-2-cols">
+                  <div class="grid">
+                    <div class="field">
+                      <label class="label label-edit">Nombre</label>
+                      <div class="control">
+                        <input id="edit-name" class="input input-edit" type="text" placeholder="Ej: Jorge">
+                        <strong id="edit-name-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label label-edit">Apellido</label>
+                      <div class="control">
+                        <input id="edit-lastname"  class="input input-edit" type="text" placeholder="Ej: Torres">
+                        <strong id="edit-lastname-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label label-edit">Carrera Universitaria</label>
+                      <div class="control">
+                        <input id="edit-name" class="input input-edit" type="text" placeholder="Ej: Ingeniería en Informática">
+                        <strong id="edit-name-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label label-edit">Signo Zodiacal</label>
+                      <div class="control">
+                        <input id="edit-lastname"  class="input input-edit" type="text" placeholder="Ej: Tauro">
+                        <strong id="edit-lastname-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field cell is-col-span-2">
+                      <label class="label label-edit">Correo Eléctronico</label>
+                      <div class="control">
+                        <input id="edit-email" class="input input-edit" type="email" placeholder="Ej: jorgetorres@fi.uba.ar">
+                        <strong id="edit-email-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label  class="label label-edit">Contraseña</label>
+                      <div class="control">
+                        <input id="edit-password" class="input input-edit" type="password" placeholder="********">
+                        <strong id="edit-password-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label label-edit">Confirmar Contraseña</label>
+                      <div class="control">
+                        <input id="edit-confirm-password" class="input input-edit" type="password" placeholder="********">
+                        <strong id="edit-confirm-password-error" class="error"></strong>
+                      </div>
+                    </div>
+                    <div class="field cell is-col-span-2">
+                      <div class="control">
+                        <button id="button-edit-modal" class="button">Registrarse</button> 
+                        <strong id="edit-button-form-error" class="error"></strong>                                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button id="button-close-modal-edit-all" class="modal-close is-large" aria-label="close"></button>
+          </div>
+        </div>
+      </div>  
+          <!-- Edit Modal Por Cada Valor -->
+          <div id="modal-edit-text" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div id="modal-edit-text" class="box modal-box">
+                <div class="fixed-grid has-2-cols">
+                  <div class="grid">
+                    <div class="field cell is-col-span-2">
+                      <label id="label-edit-text" class="label label-edit"></label>
+                      <div class="control">
+
+                        <input id="input-edit" class="input input-edit" type="text" placeholder="Ej: Jorge">
+                        <strong id="edit-name-error" class="error"></strong><br><br>
+                        <button id="button-confirm-edit" class="button">Confirmar</button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <button id="button-close-modal-edit-text" class="modal-close is-large" aria-label="close"></button>
+          </div>
+        </div>
+          <!-- Modal para eliminar usuario -->
+          <div id="modal-delete" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div id="modal-delete-box" class="box modal-box">
+                <div class="fixed-grid has-2-cols">
+                  <div class="grid">
+                    <div class="field cell is-col-span-2">
+                      <label id="label-delete" class="label label-edit"></label>
+                      <div class="control">
+                        <button id="button-confirm-delete" class="button">Eliminar</button>
+                        <strong id="edit-name-error" class="error"></strong>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <button id="button-close-modal-delete" class="modal-close is-large" aria-label="close"></button>
+          </div>
+        </div>        
+      </div>     
+      <script>
+        function toggleLike(element) {
+          element.classList.toggle("liked");
+        }
+      </script>  
+      <script src="../js/variables.js"></script>
+      <script src="../js/users.js"></script>
+    </body>
+</html>

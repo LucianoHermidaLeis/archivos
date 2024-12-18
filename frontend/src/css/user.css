@@ -1,0 +1,9 @@
+.edit-user-icon {
+  position: relative;
+  left: 1rem;
+  cursor: pointer;
+}
+
+#button-confirm-delete,#button-confirm-edit {
+    width: 100%;
+}

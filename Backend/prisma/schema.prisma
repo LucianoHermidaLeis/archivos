@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model usuario {
+  nickname String @id
+  nombre String @default("ninguno")
+  apellido String @default("ninguno")
+  email String 
+  signo_zodiacal String @default("ninguno")
+  carrera String @default("ninguno")
+  profesor Boolean @default(false)
+  contrasena String
+  posteos posteos[]
+  comentarios comentarios[]
+}
+
+model posteos {
+  id Int @id @default(autoincrement())
+  texto String
+  me_gustas Int @default(0)
+  topico String
+  asunto String
+  autor usuario @relation(fields: [autorNickname],references: [nickname], onUpdate: Cascade)
+  autorNickname String 
+  comentarios comentarios[]
+}
+
+model comentarios {
+  id Int @id @default(autoincrement())
+  texto String
+  me_gustas Int @default(0)
+  asunto String 
+  posteo posteos @relation(fields: [posteoId],references: [id], onDelete: Cascade)
+  posteoId Int 
+  autor usuario @relation(fields: [autorNickname],references: [nickname], onUpdate: Cascade)
+  autorNickname String 
+}
